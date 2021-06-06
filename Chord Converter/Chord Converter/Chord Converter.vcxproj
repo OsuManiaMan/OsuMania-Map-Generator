@@ -140,13 +140,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ChartCreator.cpp" />
+    <ClCompile Include="ChordGenerator.cpp" />
+    <ClCompile Include="ChordOptions.cpp" />
     <ClCompile Include="FileHandler.cpp" />
+    <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="JumpstreamGenerator.cpp" />
+    <ClCompile Include="JumpstreamOptions.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainOptions.cpp" />
+    <ClCompile Include="Options.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChartCreator.h" />
+    <ClInclude Include="ChordGenerator.h" />
+    <ClInclude Include="ChordOptions.h" />
     <ClInclude Include="FileHandler.h" />
+    <ClInclude Include="Generator.h" />
+    <ClInclude Include="JumpstreamGenerator.h" />
+    <ClInclude Include="JumpstreamOptions.h" />
+    <ClInclude Include="MainOptions.h" />
+    <ClInclude Include="Options.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
