@@ -1,11 +1,16 @@
+//options
 #include "Options.h"
 #include "MainOptions.h"
 #include "ChordOptions.h"
 #include "JumpstreamOptions.h"
-#include "FileHandler.h"
+#include "HandstreamOptions.h"
+//generators
 #include "Generator.h"
 #include "ChordGenerator.h"
 #include "JumpstreamGenerator.h"
+#include "HandstreamGenerator.h"
+//other
+#include "FileHandler.h"
 #include <cstdlib>
 #include <climits>
 #include <vector>
@@ -29,11 +34,12 @@ void MainOptions::presentOptions() {
 	if (keyCount == 4) {
 		printLine("Choose a pattern for the map:");
 		printLine("[1] Chords/Jack");
-		print("[2] Jumpstream\n> ");
-		patternChosen = getInt(1,2);
+		printLine("[2] Jumpstream");
+		print("[3] Handstream\n> ");
+		patternChosen = getInt(1,3);
 	}
 
-	enum Pattern { UNDEFINED, CHORDS, JUMPSTREAM };
+	enum Pattern { UNDEFINED, CHORDS, JUMPSTREAM, HANDSTREAM };
 	Pattern pattern = (Pattern)patternChosen;
 
 	//Create generator and options according to pattern type
@@ -54,6 +60,14 @@ void MainOptions::presentOptions() {
 		diffname = options.getDiffname();
 		int splitChordPercentage = options.getSplitChordPercentage();
 		generator = new JumpstreamGenerator(splitChordPercentage);
+		break;
+	}
+	case HANDSTREAM: {
+		HandstreamOptions options;
+		options.presentOptions();
+		diffname = options.getDiffname();
+		int splitChordPercentage = options.getSplitChordPercentage();
+		generator = new HandstreamGenerator(splitChordPercentage);
 		break;
 	}
 	default:
@@ -79,10 +93,15 @@ void MainOptions::presentOptions() {
 	std::vector<std::string> originalHitObjects = grabHitObjects(filename);
 	std::set<int> timestamps = getTimeStampSet(originalHitObjects, bpm);
 	std::vector<std::string> generatedHitObjects = generator->generateHitObjects(timestamps, keyCount);
+	if (generatedHitObjects.empty()) {
+		printLine("Conversion unsuccessful");
+		system("pause");
+		exit(EXIT_FAILURE);
+	}
 	std::vector<std::string> convert = convertFile(filename, generatedHitObjects, diffname);
 	writeToFile(convert, filename, diffname);
 }
 
 std::string MainOptions::getDiffname() {
-	return "_UNKOWN";
+	return "_UNKNOWN";
 }

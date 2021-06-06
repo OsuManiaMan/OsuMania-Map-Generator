@@ -144,6 +144,8 @@
     <ClCompile Include="ChordOptions.cpp" />
     <ClCompile Include="FileHandler.cpp" />
     <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="HandstreamGenerator.cpp" />
+    <ClCompile Include="HandstreamOptions.cpp" />
     <ClCompile Include="JumpstreamGenerator.cpp" />
     <ClCompile Include="JumpstreamOptions.cpp" />
     <ClCompile Include="main.cpp" />
@@ -155,6 +157,8 @@
     <ClInclude Include="ChordOptions.h" />
     <ClInclude Include="FileHandler.h" />
     <ClInclude Include="Generator.h" />
+    <ClInclude Include="HandstreamGenerator.h" />
+    <ClInclude Include="HandstreamOptions.h" />
     <ClInclude Include="JumpstreamGenerator.h" />
     <ClInclude Include="JumpstreamOptions.h" />
     <ClInclude Include="MainOptions.h" />

@@ -51,6 +51,7 @@ std::vector<std::string> JumpstreamGenerator::generateHitObjects(std::set<int> t
 //wrapper
 std::vector<std::string> JumpstreamGenerator::generateHitObjects(std::set<int> timeStamps, int keyCount, int splitChordPercentage) {
 	this->splitChordPercentage = splitChordPercentage;
+	return generateHitObjects(timeStamps, keyCount);
 }
 
 //setters
