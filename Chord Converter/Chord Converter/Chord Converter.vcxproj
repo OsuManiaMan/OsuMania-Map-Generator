@@ -140,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BracketGenerator.cpp" />
+    <ClCompile Include="BracketOptions.cpp" />
     <ClCompile Include="ChordGenerator.cpp" />
     <ClCompile Include="ChordOptions.cpp" />
     <ClCompile Include="FileHandler.cpp" />
@@ -153,6 +155,8 @@
     <ClCompile Include="Options.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BracketGenerator.h" />
+    <ClInclude Include="BracketOptions.h" />
     <ClInclude Include="ChordGenerator.h" />
     <ClInclude Include="ChordOptions.h" />
     <ClInclude Include="FileHandler.h" />

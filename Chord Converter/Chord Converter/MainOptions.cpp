@@ -4,11 +4,13 @@
 #include "ChordOptions.h"
 #include "JumpstreamOptions.h"
 #include "HandstreamOptions.h"
+#include "BracketOptions.h"
 //generators
 #include "Generator.h"
 #include "ChordGenerator.h"
 #include "JumpstreamGenerator.h"
 #include "HandstreamGenerator.h"
+#include "BracketGenerator.h"
 //other
 #include "FileHandler.h"
 #include <cstdlib>
@@ -35,11 +37,13 @@ void MainOptions::presentOptions() {
 		printLine("Choose a pattern for the map:");
 		printLine("[1] Chords/Jack");
 		printLine("[2] Jumpstream");
-		print("[3] Handstream\n> ");
-		patternChosen = getInt(1,3);
+		printLine("[3] Handstream");
+		print("[4] Brackets\n> ");
+
+		patternChosen = getInt(1,4);
 	}
 
-	enum Pattern { UNDEFINED, CHORDS, JUMPSTREAM, HANDSTREAM };
+	enum Pattern { UNDEFINED, CHORDS, JUMPSTREAM, HANDSTREAM, BRACKET };
 	Pattern pattern = (Pattern)patternChosen;
 
 	//Create generator and options according to pattern type
@@ -68,6 +72,14 @@ void MainOptions::presentOptions() {
 		diffname = options.getDiffname();
 		int splitChordPercentage = options.getSplitChordPercentage();
 		generator = new HandstreamGenerator(splitChordPercentage);
+		break;
+	}
+	case BRACKET: {
+		BracketOptions options;
+		options.presentOptions();
+		diffname = options.getDiffname();
+		int missingPercentage = options.getMissingPercentage();
+		generator = new BracketGenerator(missingPercentage);
 		break;
 	}
 	default:
