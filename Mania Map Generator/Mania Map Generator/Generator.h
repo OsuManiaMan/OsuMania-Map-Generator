@@ -26,5 +26,15 @@ public:
 
 	//calculate distance between notes, Ex. distance(1,3) = 2
 	int distance(int a, int b);
+
+	//Generate random boolean that is less likely to be a certain outcome
+	//the more that outcome happens in succession
+	bool randomWithSway(bool last, int& sway);
+
+	//Calculate a number to indicate hand usage, higher number means less balanced
+	int calculateHandUsage(std::vector<std::set<int>> notes);
+
+	//Not completely random, made for BracketGenerator but later used for LayeredStairs
+	std::set<int> getRandomStart();
 };
 

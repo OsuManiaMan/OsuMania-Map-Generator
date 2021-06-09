@@ -15,81 +15,105 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FileHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Generator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChordGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="JumpstreamGenerator.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Options.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="JumpstreamOptions.cpp">
+    <ClCompile Include="Options\BracketOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChordOptions.cpp">
+    <ClCompile Include="Options\ChordOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainOptions.cpp">
+    <ClCompile Include="Options\HandstreamOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HandstreamGenerator.cpp">
+    <ClCompile Include="Options\JumpstreamOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HandstreamOptions.cpp">
+    <ClCompile Include="Options\MainOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BracketGenerator.cpp">
+    <ClCompile Include="Options\StreamOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BracketOptions.cpp">
+    <ClCompile Include="Generators\BracketGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Generators\ChordGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Generators\HandstreamGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Generators\JumpstreamGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Generators\StreamGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Generators\LayeredStairsGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Options\LayeredStairsOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Options.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="FileHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Generator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ChordGenerator.h">
+    <ClInclude Include="Options\BracketOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JumpstreamGenerator.h">
+    <ClInclude Include="Options\ChordOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Options.h">
+    <ClInclude Include="Options\HandstreamOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JumpstreamOptions.h">
+    <ClInclude Include="Options\JumpstreamOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ChordOptions.h">
+    <ClInclude Include="Options\MainOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainOptions.h">
+    <ClInclude Include="Options\StreamOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HandstreamGenerator.h">
+    <ClInclude Include="Generators\BracketGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HandstreamOptions.h">
+    <ClInclude Include="Generators\ChordGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BracketGenerator.h">
+    <ClInclude Include="Generators\HandstreamGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BracketOptions.h">
+    <ClInclude Include="Generators\JumpstreamGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Generators\StreamGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Generators\LayeredStairsGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Options\LayeredStairsOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

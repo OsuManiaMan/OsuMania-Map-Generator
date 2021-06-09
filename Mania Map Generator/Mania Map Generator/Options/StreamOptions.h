@@ -2,15 +2,13 @@
 #include "Options.h"
 #include <string>
 
-class BracketOptions : public Options
+class StreamOptions : public Options
 {
 private:
-	std::string diffname = "BRACKETS";
-	int missingPercentage = 30;
+	std::string diffname = "SINGLE STREAM";
 
 public:
 	void presentOptions() override;
 	std::string getDiffname() override;
-	int getMissingPercentage();
 };
 

@@ -1,12 +1,7 @@
 #include "JumpstreamOptions.h"
 
 void JumpstreamOptions::presentOptions() {
-	print("Want a custom diff name?(y/n): ");
-	std::string answer = getString();
-	if (answer != "n") {
-		printLine("Enter a name for the difficulty:");
-		diffname = getString();
-	}
+	diffname = askForDiffname(diffname);
 
 	printLine("Split chords:");
 	printLine("A split chord is a chord with non-adjacent notes, like this pattern for example");
@@ -16,7 +11,7 @@ void JumpstreamOptions::presentOptions() {
 	printLine("   #");
 	printLine("# # ");
 	print("Would you like to specify split chord chance, default is 33%?(y/n): ");
-	answer = getString();
+	std::string answer = getString();
 	if (answer != "n") {
 		printLine("Enter a whole number between 0-100.");
 		printLine("It is the percentage that a split chord will appear.");

@@ -1,5 +1,5 @@
 #pragma once
-#include "Generator.h"
+#include "../Generator.h"
 #include <vector>
 #include <string>
 #include <set>
@@ -11,6 +11,7 @@ private:
 	std::vector<std::string> generateHitObjects4k(std::set<int> timeStamps);
 	std::vector<std::string> generateHitObjects6k(std::set<int> timeStamps);
 	std::vector<std::string> generateHitObjects7k(std::set<int> timeStamps);
+	std::vector<std::set<int>> generateNotes7k(int timeStampCount);
 
 public:
 	BracketGenerator(int missingPercentage = 30);

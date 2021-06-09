@@ -16,5 +16,6 @@ public:
 //User input functions
 	std::string getString();
 	int getInt(int lowerBound = 0, int upperBound = 100);
+	std::string askForDiffname(std::string defaultName);
 };
 
