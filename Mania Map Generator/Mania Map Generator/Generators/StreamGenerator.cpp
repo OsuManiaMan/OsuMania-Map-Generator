@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <ctime>
 
+StreamGenerator::StreamGenerator(int trillPercentage) : trillPercentage(trillPercentage) {}
+
 std::vector<std::string> StreamGenerator::generateHitObjects(std::set<int> timeStamps, int keyCount) {
 	std::vector<std::string> hitObjects;
 	std::srand(std::time(0));
@@ -15,7 +17,13 @@ std::vector<std::string> StreamGenerator::generateHitObjects(std::set<int> timeS
 	int sway = 0;
 	for (int time : timeStamps) {
 		if (pattern == NONE or reserve == 0) {
-			pattern = (randomWithSway((int)pattern, sway)) ? ROLL : TRILL;
+			if (trillPercentage == -2) {
+				pattern = (randomWithSway((int)pattern, sway)) ? ROLL : TRILL;
+			}
+			else {
+				pattern = (std::rand() % 100 < trillPercentage) ? TRILL : ROLL;
+			}
+			
 			reserve = std::rand() % keyCount + 1;
 			if (pattern == ROLL) {
 				direction = (std::rand() % 2) ? LEFT : RIGHT;

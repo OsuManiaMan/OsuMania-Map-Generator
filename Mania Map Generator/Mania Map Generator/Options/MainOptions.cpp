@@ -113,7 +113,8 @@ void MainOptions::presentOptions() {
 		StreamOptions options;
 		options.presentOptions();
 		diffname = options.getDiffname();
-		generator = new StreamGenerator();
+		int trillPercentage = options.getTrillPercentage();
+		generator = new StreamGenerator(trillPercentage);
 		break;
 	}
 	case LAYERED_STAIRS: {
