@@ -85,3 +85,59 @@ bool Generator::contains(std::pair<int, int> p, int x) {
 int Generator::distance(int a, int b) {
 	return std::abs(a - b);
 }
+
+bool Generator::randomWithSway(bool last, int& sway) {
+	int percentage = 50;
+	for (int i = abs(sway); i > 0; i--) {
+		percentage /= 2;
+	}
+	if (sway < 0) {
+		percentage = 100 - percentage;
+	}
+
+	bool outcome = rand() % 100 < percentage;
+
+	//adjust sway
+	if (outcome != last)
+		sway = 0;
+	else if (outcome)
+		sway++;
+	else
+		sway--;
+
+	return outcome;
+}
+
+int Generator::calculateHandUsage(std::vector<std::set<int>> notes) {
+	int balance = 0;
+	for (std::set<int> timestamp : notes) {
+		for (int col : timestamp) {
+			balance += (col < 3) ? -1 : 1;
+		}
+	}
+	return abs(balance);
+}
+
+std::set<int> Generator::getRandomStart() {
+	std::set<int> columns;
+	int noteCount = rand() % 4 + 1;
+	if (noteCount == 4) {
+		return std::set<int>{0, 2, 4, 6};
+	}
+	else if (noteCount == 3) {
+		int start = rand() % 2;
+		for (int i = start; i < 7; i += 2) {
+			columns.insert(i);
+		}
+		return columns;
+	}
+	else if (noteCount == 2) {
+		int start = rand() % 5;
+		columns.insert(start);
+		columns.insert(start + 2);
+		return columns;
+	}
+	else {
+		return std::set<int>{rand() % 7};
+	}
+}

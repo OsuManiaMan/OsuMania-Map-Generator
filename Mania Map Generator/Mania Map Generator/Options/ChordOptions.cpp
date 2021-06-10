@@ -5,16 +5,11 @@ ChordOptions::ChordOptions(int keyCount) {
 }
 
 void ChordOptions::presentOptions() {
-	print("Want a custom diff name?(y/n): ");
-	std::string answer = getString();
-	if (answer != "n") {
-		printLine("Enter a name for the difficulty:");
-		diffname = getString();
-	}
+	diffname = askForDiffname(diffname);
 	
 
 	printLine("Would you like to specify chord distributions?(y/n): ");
-	answer = getString();
+	std::string answer = getString();
 
 	//set up default distributions
 	for (int i = 0; i < keyCount - 1; i++) {

@@ -55,3 +55,13 @@ bool isInt(std::string s) {
 	}
 	return true;
 }
+
+std::string Options::askForDiffname(std::string defaultName) {
+	print("Want a custom diff name?(y/n): ");
+	std::string answer = getString();
+	if (answer != "n") {
+		printLine("Enter a name for the difficulty:");
+		return getString();
+	}
+	return defaultName;
+}
