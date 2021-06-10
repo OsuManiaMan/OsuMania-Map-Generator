@@ -100,7 +100,13 @@ void MainOptions::presentOptions() {
 		options.presentOptions();
 		diffname = options.getDiffname();
 		int missingPercentage = options.getMissingPercentage();
-		generator = new BracketGenerator(missingPercentage);
+		int useGenerator = options.getGenerator();
+		if (keyCount == 7 and useGenerator == 2) {
+			generator = new LayeredStairsGenerator(std::rand() % 2 + 3);
+		}
+		else {
+			generator = new BracketGenerator(missingPercentage);
+		}
 		break;
 	}
 	case SINGLESTREAM: {

@@ -23,6 +23,17 @@ void BracketOptions::presentOptions() {
 			missingPercentage = getInt();
 		}
 	}
+	else {
+		print("Would you like to choose a generator?(y/n): ");
+		std::string answer = getString();
+		if (answer != "n") {
+			printLine("Choose a generator:");
+			printLine("[1] Less dense");
+			printLine("[2] Better but more dense (I recommend this one if your not sure, this is the default generator)");
+			print("> ");
+			generator = getInt(1, 2);
+		}
+	}
 }
 
 std::string BracketOptions::getDiffname() {
@@ -31,4 +42,8 @@ std::string BracketOptions::getDiffname() {
 
 int BracketOptions::getMissingPercentage() {
 	return missingPercentage;
+}
+
+int BracketOptions::getGenerator() {
+	return generator;
 }
